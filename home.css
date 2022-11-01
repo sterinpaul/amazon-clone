@@ -1,0 +1,530 @@
+*,*::before,*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+nav{
+    display:flex;
+    background:black;
+}
+.navbar-top{
+    min-width:100vw;
+    height:3.7rem;
+    display:flex;
+    flex-flow: row;
+    position:fixed;
+    /* overflow-x: auto; */
+    /* scrollbar-width: none; */
+    /* -ms-overflow-style: none; */
+    background:black;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Amazon Ember",sans-serif;
+    z-index:100;
+}
+/* .navbar-top::-webkit-scrollbar{
+    display:none;
+} */
+.amazon-logo{
+    width:8rem;
+    height:2.8rem;
+    background:url(https://pngimg.com/uploads/amazon/amazon_PNG25.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left:.2rem;
+    background-position: .3rem .2rem;
+    border-radius:.1rem;
+}
+.amazon-logo:hover, .location:hover{
+    outline:1px solid white;
+}
+.location{
+    min-width:10rem;
+    height:2.8rem;
+    border-radius:.1rem;
+}
+.location::before{
+    position:absolute;
+    content:"";
+    height:20px;
+    width:20px;
+    background: url(https://www.freeiconspng.com/uploads/map-location-address-flat-icons--free-flat-icons--all-shapes--12.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top:1.25rem;
+}
+.location-hello{
+    margin-left:1.4rem;
+    margin-top:.5rem;
+    font-size:.8rem;
+    color:lightgray;
+}
+.location-address{
+    margin-left:1.4rem;
+    color:white;
+    font-size:.9rem;
+}
+.input-field{
+    position:relative;
+    left:.5rem;
+}
+.navbar-top input{
+    height:2.6rem;
+    min-width:33rem;
+    border-radius: .4rem;
+    text-indent: 3.5rem;
+    font-size: 1rem;
+    outline:none;
+    border:none;
+}
+.navbar-top input:focus{
+    border:3px solid orange;
+}
+.navbar-top div select{
+    position:absolute;
+    top:.17rem;
+    left:.15rem;
+    height:2.22rem;
+    width:3.4rem;
+    background-color: rgb(243, 241, 241);
+    border-radius: .3rem 0 0 .3rem;
+    border-color:transparent lightgray transparent transparent;
+    text-indent: .85rem;
+    cursor:pointer;
+}
+.navbar-top div select:focus{
+    outline:3px solid orange;
+}
+.search-button{
+    position:absolute;
+    right:0;
+    width:2.6rem;
+    height:2.6rem;
+    background-color: rgb(250, 195, 93);
+    background-image: url(https://www.freeiconspng.com/uploads/search-icon-png-5.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: .5rem .5rem;
+    border-radius:0 .3rem .3rem 0;
+}
+.search-button:hover{
+    background-color: orange;
+}
+.language{
+    position:relative;
+    margin-left:.2rem;
+    min-width:4rem;
+    max-width:4rem;
+    height:2.8rem;
+    color:white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: .1rem;
+}
+.language:hover{
+    outline:1px solid white;
+}
+.language:hover .lang-container{
+    display:block;
+}
+.eng{
+    margin-top:.4rem;
+    font-size:.7rem;
+}
+.flag{
+    width:2rem;
+    height:2rem;
+    margin-top:.1rem;
+    margin-left:.8rem;
+    background:url(https://www.freeiconspng.com/uploads/india-flags-icon-png-22.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.flag::after{
+    content:"";
+    position:absolute;
+    left:2.7rem;
+    top:1.6rem;
+    border-top:.3rem solid white;
+    border-left:.3rem solid transparent;
+    border-right:.3rem solid transparent;
+}
+.lang-container{
+    position:relative;
+    top:-.3rem;
+    display:none;
+    width:10rem;
+    height:8rem;
+    border-radius: .2rem;
+    color:black;
+    background-color: white;
+    box-shadow: .05rem .05rem .2rem gray;
+}
+.lang-container::before{
+    position:absolute;
+    content:"";
+    top:-.5rem;
+    left:25.5%;
+    border-bottom:.5rem solid white;
+    border-left:.5rem solid transparent;
+    border-right:.5rem solid transparent;
+}
+.lang-container input[type="radio"]{
+    height:1rem;
+    margin-left:-15rem;
+    margin-top:1rem;
+    vertical-align: middle;
+}
+.lang-container label{
+    float:left;
+    margin-left:3rem;
+    margin-top:-1rem;
+}
+.accounts{
+    position: relative;
+    height:2.8rem;
+    min-width:8.3rem;
+    max-width:8.3rem;
+    color:white;
+    cursor: pointer;
+    text-align: left;
+    border-radius: .1rem;
+}
+.accounts:hover{
+    outline:1px solid white;
+}
+.accounts:hover .accounts-popup{
+    display:block;
+}
+.accounts div:nth-child(1){
+    padding-top:.4rem;
+    font-size:.7rem;
+    margin-left:.4rem;
+}
+.accounts div:nth-child(2){
+    position:relative;
+    margin-top:.2rem;
+    margin-left:.4rem;
+}
+.accounts div:nth-child(2)::after{
+    content:"";
+    position:absolute;
+    right:.3rem;
+    top:.4rem;
+    border-top:.3rem solid white;
+    border-left:.3rem solid transparent;
+    border-right:.3rem solid transparent;
+}
+.accounts-popup{
+    display:none;
+    width:20rem;
+    height:20rem;
+    background-color: white;
+    position:relative;
+    left:-8rem;
+    top:.45rem;
+    border-radius: .2rem;
+    box-shadow: .05rem .05rem .2rem gray;
+}
+.accounts-popup::before{
+    position:absolute;
+    content:"";
+    top:-.5rem;
+    left:76.5%;
+    border-bottom:.5rem solid white;
+    border-left:.5rem solid transparent;
+    border-right:.5rem solid transparent;
+}
+.returns-orders{
+    position: relative;
+    height:2.8rem;
+    min-width:5rem;
+    color:white;
+    cursor: pointer;
+    text-align: left;
+    border-radius: .1rem;
+}
+.returns-orders div:nth-child(1){
+    padding-top:.4rem;
+    font-size:.7rem;
+    margin-left:.4rem;
+}
+.returns-orders div:nth-child(2){
+    position:relative;
+    margin-top:.2rem;
+    margin-left:.4rem;
+}
+.returns-orders:hover{
+    outline:1px solid white;
+}
+.cart-img{
+    height:2.8rem;
+    min-width:6rem;
+    text-decoration: none;
+    background-image:url(https://icon-library.com/images/white-shopping-cart-icon-png/white-shopping-cart-icon-png-2.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: .4rem .3rem;
+}
+.cart{
+    color:white;
+    text-decoration: none;
+    position:relative;
+    left:3.2rem;
+    top:1.4rem;
+}
+.cart::before{
+    position: absolute;
+    content:attr(data-count);
+    left:-1.6rem;
+    top:-1.3rem;
+    color:red;
+}
+.cart-img:hover{
+    outline:1px solid white;
+}
+.navbar-bottom{
+    width:100vw;
+    position:sticky;
+    height:2.4rem;
+    margin-top:3.7rem;
+    color:white;
+    overflow:hidden;
+    background:rgb(34, 47, 68);
+}
+.navbar-bottom ul{
+    list-style: none;
+    padding-top:.4rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navbar-bottom ul li{
+    width:fit-content;
+    padding:.3rem .5rem;
+    font-size: .9rem;
+    border-radius: .1rem;
+    cursor:pointer;
+}
+.navbar-bottom ul a li:hover{
+    outline:1px solid white;
+}
+.hamberger{
+    float:left;
+}
+.hamberger .line{
+    width:1rem;
+    height:.1rem;
+    margin-top:.16rem;
+    background:white;
+}
+.all{
+    margin-left:.5rem;
+}
+.prime-pop{
+    position:relative;
+    left:-.3rem;
+}
+.prime-pop::after{
+    position:absolute;
+    content:"";
+    top:.4rem;
+    left:2.5rem;
+    border-top:.3rem solid gray;
+    border-left:.3rem solid transparent;
+    border-right:.3rem solid transparent;
+}
+
+
+.home{
+    width:100vw;
+    height:100%;
+    position:relative;
+    background-image:url(https://m.media-amazon.com/images/I/617Wo3jP3fL._SX3000_.jpg),linear-gradient(transparent 20%,rgb(237, 233, 233) 40%);
+    background-blend-mode: color;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: -7rem 0;
+}
+.home::before{
+    position:absolute;
+    content:"";
+    width:1.5rem;
+    height:1.5rem;
+    border-left:.2rem solid white;
+    border-top:.2rem solid white;
+    transform:rotate(-45deg);
+    left:2rem;
+    top:7rem;
+    filter:drop-shadow(-.1rem -.1rem black);
+}
+.home::after{
+    position:absolute;
+    content:"";
+    width:1.5rem;
+    height:1.5rem;
+    border-left:.2rem solid white;
+    border-top:.2rem solid white;
+    transform:rotate(135deg);
+    left:76.5rem;
+    top:7rem;
+    filter:drop-shadow(-.1rem -.1rem black);
+}
+.home-group{
+    padding:16rem 0 2rem 0;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.group-tiles{
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    width:18.5rem;
+    height:24rem;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap:1rem;
+}
+.group{
+    display:flex;
+    flex-wrap: wrap;
+    height:14rem;
+    justify-content: center;
+}
+.group-tiles h3{
+    font-size: 1.4rem;
+    padding:1.5rem 2rem 0rem 2rem;
+}
+.bottom{
+    color:rgb(37, 134, 158);
+    font-size:.9rem;
+    text-decoration: none;
+    padding:1rem 2rem;
+    align-self: baseline;
+}
+.tile-link{
+    text-decoration: none;
+    color:black;
+}
+.tiles img{
+    width:8rem;
+    height:4.5rem;
+    object-fit: contain;
+}
+.tiles p{
+    margin-left:.3rem;
+    font-size: .7rem;
+    max-width:6.7rem;
+}
+.group-tiles-last-row{
+    display:flex;
+    flex-direction: column;
+    width:18.5rem;
+    height:27rem;
+    gap:1rem;
+}
+.sign-in{
+    background-color: white;
+    margin-top:1.5rem;
+}
+.sign-in h3{
+    font-size: 1.4rem;
+    margin:1.4rem 1.4rem .6rem 1.4rem;
+}
+.sign-button{
+    text-align: center;
+    display:inline-block;
+    padding:0.5rem 4rem;
+    margin:.8rem 1rem 1rem 2.35rem;
+    background-color: rgb(255, 217, 0);
+    border-radius: .4rem;;
+    font-size: .8rem;;
+}
+.sign-button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 191, 0);
+}
+.lap-img{
+    overflow: hidden;
+    background-image: url("https://m.media-amazon.com/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg");
+    background-size: cover;
+    background-position: 0 -1rem;
+    background-repeat: no-repeat;
+    height:14.05rem;
+}
+#back-button{
+    background-color: rgb(52, 62, 79);
+    text-align: center;
+    padding:1rem;
+    color:white;
+    font-size: .9rem;
+}
+.back{
+    text-decoration: none;
+}
+.footer-container1{
+    padding:2.5rem 2rem;
+    background-color: rgb(36, 46, 59);
+    display:flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+.footer-container1 ul{
+    list-style: none;
+}
+.footer-container1 ul a{
+    text-decoration: none;
+    font-size: .9rem;
+    padding:.9rem;
+    color:rgb(215, 210, 210);
+}
+.footer-container1 ul a:hover{
+    text-decoration: underline;
+}
+.foot-head{
+    color:white;
+    font-size: 1.1rem;
+}
+.footer-container2{
+    border-top:.1rem solid rgb(79, 77, 77);
+    background-color: rgb(36, 46, 59);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.amazon-eng{
+    display:flex;
+    padding-top:2rem;
+}
+.amazon-eng img{
+    width:5rem;
+    margin-right:4rem;
+    cursor: pointer;
+}
+.amazon-eng a{
+    padding:.4rem 2rem;
+    border:.1rem solid rgb(141, 139, 139);
+    color:rgb(215, 210, 210);
+    text-decoration: none;
+    border-radius: .2rem;
+    font-size: .8rem;
+}
+.countries{
+    padding:1rem 11rem;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.countries a{
+    cursor: pointer;
+    font-size: .7rem;
+    padding:.2rem .5rem;
+    color:rgb(215, 210, 210);
+}
