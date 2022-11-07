@@ -303,10 +303,9 @@ nav{
     padding-top:.4rem;
     display:flex;
     align-items: center;
-    justify-content: space-around;
 }
 .navbar-bottom ul li{
-    width:fit-content;
+    width:max-content;
     padding:.3rem .5rem;
     font-size: .9rem;
     border-radius: .1rem;
